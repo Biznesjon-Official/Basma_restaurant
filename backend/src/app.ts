@@ -9,6 +9,9 @@ import logger from './utils/logger'
 
 const app: Application = express()
 
+// Trust proxy - Nginx orqali ishlash uchun
+app.set('trust proxy', 1)
+
 // Security & Performance Middlewares
 app.use(helmet())
 app.use(compression())
