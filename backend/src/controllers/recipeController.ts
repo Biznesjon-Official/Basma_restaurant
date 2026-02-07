@@ -98,8 +98,8 @@ export const createRecipe = async (req: AuthRequest, res: Response) => {
       ingredients,
       portionSize: portionSize || 1,
       notes,
-      createdBy: userId,
-      updatedBy: userId,
+      createdBy: userId as any,
+      updatedBy: userId as any,
     })
 
     const populatedRecipe = await Recipe.findById(recipe._id)
@@ -142,7 +142,7 @@ export const updateRecipe = async (req: AuthRequest, res: Response) => {
 
     if (portionSize !== undefined) recipe.portionSize = portionSize
     if (notes !== undefined) recipe.notes = notes
-    recipe.updatedBy = userId!
+    recipe.updatedBy = userId! as any
 
     await recipe.save()
 
