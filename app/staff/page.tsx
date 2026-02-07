@@ -335,7 +335,7 @@ export default function StaffPage() {
                     {filteredStaff.map((member) => {
                       const role = roleConfig[member.role as keyof typeof roleConfig]
                       const shift = shiftConfig[member.shift as keyof typeof shiftConfig]
-                      const initials = member.name.split(' ').map(n => n[0]).join('')
+                      const initials = member.name.split(' ').map((n: string) => n[0]).join('')
                       return (
                         <TableRow key={member.id}>
                           <TableCell>

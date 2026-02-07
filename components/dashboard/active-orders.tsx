@@ -28,7 +28,9 @@ export function ActiveOrders() {
       loadOrders()
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   const loadOrders = async () => {

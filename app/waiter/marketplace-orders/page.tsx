@@ -275,10 +275,10 @@ export default function MarketplaceOrdersPage() {
         } else {
           toast.error(data.error || 'Xatolik yuz berdi')
         }
-        console.error('❌ Server xatolik:', data)
+        console.error('❌ Server xatolik:', data.error || data.message || 'Unknown error')
       }
-    } catch (error) {
-      console.error('❌ Send to cashier error:', error)
+    } catch (error: any) {
+      console.error('❌ Send to cashier error:', error?.message || error)
       toast.error('Xatolik yuz berdi')
     }
   }

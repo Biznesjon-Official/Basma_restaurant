@@ -67,6 +67,8 @@ import cashierRoutes from './routes/cashierRoutes'
 import marketplaceOrderRoutes from './routes/marketplaceOrderRoutes'
 import waiterCallRoutes from './routes/waiterCallRoutes'
 import webhookRoutes from './routes/webhookRoutes'
+import recipeRoutes from './routes/recipeRoutes'
+import backupRoutes from './routes/backupRoutes'
 
 app.use('/api/auth', authRoutes)
 app.use('/api/menu', menuRoutes)
@@ -86,6 +88,8 @@ app.use('/api/storekeeper', storekeeperRoutes)
 app.use('/api/cashier', cashierRoutes)
 app.use('/api/marketplace-orders', marketplaceOrderRoutes)
 app.use('/api/waiter-calls', waiterCallRoutes)
+app.use('/api/recipes', recipeRoutes)
+app.use('/api/backups', backupRoutes)
 app.use('/api/webhooks', webhookRoutes) // Webhook routes (no auth required)
 
 // Error Handlers
